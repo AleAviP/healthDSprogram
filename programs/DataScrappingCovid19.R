@@ -30,7 +30,7 @@ library(ggplot2)
 urlfile<-'https://raw.githubusercontent.com/AleAviP/healthDSprogram/main/data/Twitter_Covid.RDS'
 
 ###### Read data and change format######
-data.seq.cost<-readRDS(url(urlfile))
+fn_twitter_df<-readRDS(url(urlfile))
 
 tweet_words <- fn_twitter_df %>% select(id, text) %>% unnest_tokens(word,text)
 
