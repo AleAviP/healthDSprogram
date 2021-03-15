@@ -25,6 +25,7 @@ library(dplyr)
 library(ggplot2)
 
 # ####If you have the Twitter developed keys run this####
+#fn_twitter <- searchTwitter("#8M",n=1000,lang="es")
 fn_twitter <- searchTwitter("#8M",n=1000,lang="en")
 fn_twitter_df <- twListToDF(fn_twitter) #Convert to data frame
 
@@ -59,5 +60,5 @@ tweet_words_interesting %>% group_by(word) %>%
 df = tweet_words_interesting %>% count(word, sort=TRUE)
 
 wordcloud::wordcloud(words = df$word, freq = df$n, min.freq = 1,
-          max.words=100, random.order=FALSE, rot.per=0.15, 
+          max.words=100, random.order=FALSE, rot.per=0.1, 
           colors=RColorBrewer::brewer.pal(8, "Dark2"))
