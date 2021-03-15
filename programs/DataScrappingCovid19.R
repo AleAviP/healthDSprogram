@@ -6,6 +6,7 @@
 # install.packages("ggplot2")
 # 
 # ####Set up user###
+# Instrucciones para las llaves: https://bigcomputing.blogspot.com/
 # library(twitteR)
 # 
 # consumer_key <- ckey         #Add from your own Twitter accoung
