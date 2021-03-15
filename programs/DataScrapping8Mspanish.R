@@ -4,7 +4,8 @@
 # install.packages("tidytext")
 # install.packages("dplyr")
 # install.packages("ggplot2")
-# install.packages("tm)
+# install.packages("tm")
+# install.packages("wordcloud2")
 # 
 # ####Set up user###
 # Instrucciones para las llaves: https://bigcomputing.blogspot.com/
@@ -59,6 +60,4 @@ tweet_words_interesting %>% group_by(word) %>%
 ####Sentiment analysis###
 df = tweet_words_interesting %>% count(word, sort=TRUE)
 
-wordcloud::wordcloud(words = df$word, freq = df$n, min.freq = 1,
-          max.words=100, random.order=FALSE, rot.per=0.1, 
-          colors=RColorBrewer::brewer.pal(8, "Dark2"))
+wordcloud2::wordcloud2(df,size=0.7,color="random-dark")
