@@ -64,8 +64,8 @@ ev <- eigen(cor(t(X_var_std))) # get eigenvalues
 S2 <- cov(X_var_std)
 l2 <- eigen(S2)$values
 v2 <- eigen(S2)$vector
-pc2 <- X_var_std %*% v
-Position(function(x) x > .9,cumsum(l2)/sum(l2)) #26
+pc2 <- X_var_std %*% v2
+Position(function(x) x > .9,cumsum(l2)/sum(l2)) #2
 FA_var = fa.em((X_var_std),Position(function(x) x > .9,cumsum(l2)/sum(l2)),tol=0.001, maxiter = 100)
 
 ##COMBAT
